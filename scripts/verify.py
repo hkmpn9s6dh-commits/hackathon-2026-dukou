@@ -77,6 +77,8 @@ def main() -> int:
         print("缺 out/muxi.wav，先跑 python scripts/build.py")
         return 1
 
+    bj = json.loads((OUT / "build.json").read_text(encoding="utf-8")) if (OUT / "build.json").exists() else {}
+
     print("== 1. 交付物在不在 ==")
     check("out/muxi.wav 存在", wav.exists(), f"{wav.stat().st_size / 1e6:.1f} MB" if wav.exists() else "")
     check("out/muxi.mp3 存在", mp3.exists(), f"{mp3.stat().st_size / 1e6:.2f} MB" if mp3.exists() else "")
@@ -121,7 +123,6 @@ def main() -> int:
           f"末 5 s {dsp.integrated_lufs(x[-5 * dsp.FS:]):.1f} LUFS")
 
     print("== 6. 单源约束 ==")
-    bj = json.loads((OUT / "build.json").read_text(encoding="utf-8"))
     prov = bj.get("provenance", {})
     check("来源账只指向一处", prov.get("sources") == [SRC_TAG], f"{prov.get('sources')}")
     check("声部调用数 > 40（说明确实是一个一个派生的）", prov.get("calls", 0) > 40,
@@ -165,8 +166,11 @@ def main() -> int:
     print("== 9. 确定性 ==")
     if a.twice:
         h1 = sha256(wav)
-        print("  重新渲染一遍 …")
-        subprocess.run([sys.executable, str(ROOT / "scripts" / "build.py"), "--wav-only"],
+        # 必须用同一个读法重建，否则比的是两个不同的版本（踩过一次）
+        variant = bj.get("variant", "boat")
+        print(f"  重新渲染一遍（variant={variant}）…")
+        subprocess.run([sys.executable, str(ROOT / "scripts" / "build.py"),
+                        "--wav-only", "--variant", variant],
                        check=True, cwd=str(ROOT))
         h2 = sha256(wav)
         check("两次渲染 sha256 一致", h1 == h2, f"{h1[:16]}… vs {h2[:16]}…")

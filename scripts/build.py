@@ -123,7 +123,7 @@ def main() -> int:
         "sources": sorted({s for _, s in R.LAST_LOG}),
     }
     (OUT / "build.json").write_text(
-        json.dumps({"measures": m, "provenance": prov,
+        json.dumps({"measures": m, "provenance": prov, "variant": a.variant,
                     "seconds": round(time.time() - t0, 1)},
                    ensure_ascii=False, indent=2),
         encoding="utf-8",

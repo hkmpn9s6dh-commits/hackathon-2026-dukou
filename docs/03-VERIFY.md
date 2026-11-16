@@ -6,7 +6,7 @@
 bash scripts/verify.sh --twice
 ```
 
-退出码 = 失败的条数。**25 条交付物断言 + 38 条单元断言，0 失败。**
+退出码 = 失败的条数。**25 条交付物断言（加 `--twice` 是 26 条）+ 38 条单元断言，0 失败。**
 
 ## 1. 结构
 
@@ -15,7 +15,7 @@ bash scripts/verify.sh --twice
 | 单元 | `tests/test_dsp.py` | 14 | 响度表、真峰、限幅、重采样、粒度、单声道口径 |
 | 单元 | `tests/test_source.py` | 7 | 钢板脉冲：归一、衰减、非谐、力度→音色、确定性 |
 | 单元 | `tests/test_voices.py` | 17 | 各声部有限/有音高；乐谱的调式、音域、撞音、终止 |
-| 交付 | `scripts/verify.py` | 25 | 见下 |
+| 交付 | `scripts/verify.py` | 25（`--twice` 26） | 见下 |
 
 单元断言里最有用的三条，都是**先失败后修的**：
 
@@ -26,7 +26,7 @@ bash scripts/verify.sh --twice
 - `test_pad_has_the_requested_pitch_classes`：弦垫必须真的在那个和弦上。
   这一条逼出了弦垫的整段重写（梳状 EQ → 频域谐波列）。
 
-## 2. 交付物断言（25 条）
+## 2. 交付物断言（25 条，加 `--twice` 26 条）
 
 | 组 | 断言 |
 |---|---|

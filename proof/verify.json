@@ -123,5 +123,10 @@
     "check": "真峰值口径差 ≤ 0.5 dB",
     "pass": true,
     "detail": "ffmpeg -1.2 vs 自建 -1.2"
+  },
+  {
+    "check": "两次渲染 sha256 一致",
+    "pass": true,
+    "detail": "a1401b7a5181deaf… vs a1401b7a5181deaf…"
   }
 ]
