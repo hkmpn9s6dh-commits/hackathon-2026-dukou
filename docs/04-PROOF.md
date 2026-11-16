@@ -17,16 +17,17 @@
 git clone https://github.com/hkmpn9s6dh-commits/hackathon-2026-dukou.git _clone
 cd _clone
 python -m venv .venv && ./.venv/Scripts/python.exe -m pip install -r requirements.txt
-PYTHONPATH=src ./.venv/Scripts/python.exe scripts/build.py --variant bell
+PYTHONPATH=src ./.venv/Scripts/python.exe scripts/build.py     # 默认就是定稿（boat）
 PYTHONPATH=src ./.venv/Scripts/python.exe scripts/verify.py --twice
 ```
 
-结果（2026-11-16，commit `419a4f9`）：
+结果（2026-11-16，commit `b1f4be2`）：
 
-- 装依赖 + 从零构建 + 全部断言：**3 分 48 秒**
+- 装依赖 + 从零构建 + 全部断言：**3 分 48 秒**（clone 复用已有 venv 时 87 秒构建）
 - 26 条断言 **0 失败**
-- 两次渲染 sha256 一致：`a1401b7a5181deaf…`
+- 两次渲染 sha256 一致：`d6a99c672f50b179…`
 - **与工作机产出的 sha256 完全相同** —— 不是"能跑起来"，是"跑出一模一样的东西"
+- 这个复验在三个读法上都跑过（`--variant bell` 时为 `a1401b7a5181deaf…`）
 
 ### 这一步抓到的真 bug
 
