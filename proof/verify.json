@@ -32,7 +32,7 @@
   {
     "check": "集成响度 −14.0 ± 0.5 LUFS",
     "pass": true,
-    "detail": "-14.07"
+    "detail": "-14.05"
   },
   {
     "check": "真峰值 ≤ −1.0 dBTP",
@@ -42,47 +42,47 @@
   {
     "check": "LRA 在 6–16 LU（没把动态压死）",
     "pass": true,
-    "detail": "12.82"
+    "detail": "12.38"
   },
   {
     "check": "直流偏置 < 1e-3",
     "pass": true,
-    "detail": "8.27e-06"
+    "detail": "4.66e-06"
   },
   {
     "check": "单声道折叠额外损失 < 3 dB",
     "pass": true,
-    "detail": "2.87"
+    "detail": "2.88"
   },
   {
     "check": "立体声相关 0.05–0.85（不是假立体也不是单声道）",
     "pass": true,
-    "detail": "0.120"
+    "detail": "0.165"
   },
   {
     "check": "八度带最大偏差 ≤ 4 dB",
     "pass": true,
-    "detail": "worst 16000Hz -2.1dB"
+    "detail": "worst 16000Hz -1.9dB"
   },
   {
     "check": "第三段是全曲最响",
     "pass": true,
-    "detail": "['-19.4', '-12.9', '-11.1', '-19.5']"
+    "detail": "['-19.2', '-13.0', '-11.0', '-19.3']"
   },
   {
     "check": "第二段比第一段响（有推进）",
     "pass": true,
-    "detail": "-12.9 vs -19.4"
+    "detail": "-13.0 vs -19.2"
   },
   {
     "check": "第四段退回去（比第二段轻 4 dB 以上）",
     "pass": true,
-    "detail": "-19.5 vs -12.9"
+    "detail": "-19.3 vs -13.0"
   },
   {
     "check": "结尾 5 秒在衰减",
     "pass": true,
-    "detail": "末 5 s -31.1 LUFS"
+    "detail": "末 5 s -32.3 LUFS"
   },
   {
     "check": "来源账只指向一处",
@@ -107,12 +107,12 @@
   {
     "check": "MP3 解码后响度与 WAV 差 ≤ 0.5 LU",
     "pass": true,
-    "detail": "-14.07 vs -14.07"
+    "detail": "-14.05 vs -14.05"
   },
   {
     "check": "MP3 解码后真峰值 ≤ −0.8 dBTP",
     "pass": true,
-    "detail": "-1.03"
+    "detail": "-1.07"
   },
   {
     "check": "自建响度表 vs ffmpeg ebur128 差 ≤ 0.2 LU",
@@ -127,6 +127,6 @@
   {
     "check": "两次渲染 sha256 一致",
     "pass": true,
-    "detail": "a1401b7a5181deaf… vs a1401b7a5181deaf…"
+    "detail": "d6a99c672f50b179… vs d6a99c672f50b179…"
   }
 ]

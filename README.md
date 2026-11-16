@@ -11,12 +11,12 @@ python scripts/build.py     # 从零重建 out/muxi.wav + out/muxi.mp3（约 90 
 bash  scripts/verify.sh     # 38 条单元断言 + 25 条交付物断言（加 --twice 是 26 条）
 ```
 
-定稿是三个读法里的 **丙（钟）**，由闸 D 盲排选出（`docs/06-GATE-D.md`）。
-另外两个读法还能一行命令渲出来：
+定稿是 **乙（全编制）**：闸 D 三位评委各选一个、没有共识，按平均名次取乙
+（它是唯一没有人排最后的那个），见 `docs/06-GATE-D.md`。另两个读法一行命令就能渲：
 
 ```
-python scripts/build.py --variant boat    # 乙：全编制（原定稿）
-python scripts/build.py --variant water   # 甲：只有水/弦垫/箫/钟
+python scripts/build.py --variant water   # 甲：只有水/弦垫/箫/钟（最干净、最薄）
+python scripts/build.py --variant bell    # 丙：钟与锣为主（上暗下重，两位评委排最后）
 ```
 
 ## 目录

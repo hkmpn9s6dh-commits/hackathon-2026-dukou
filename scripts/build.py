@@ -95,7 +95,8 @@ def main() -> int:
     ap.add_argument("--wav-only", action="store_true")
     ap.add_argument("--variant", default="boat",
                     choices=["boat", "water", "bell"],
-                    help="三个读法之一；闸 D 盲排选出的是 bell（丙）")
+                    help="三个读法之一。闸 D 三位评委各选一个、无共识，"
+                         "按平均名次取乙（boat，全编制），见 docs/06-GATE-D.md")
     ap.add_argument("--target-lufs", type=float, default=-14.0)
     a = ap.parse_args()
 

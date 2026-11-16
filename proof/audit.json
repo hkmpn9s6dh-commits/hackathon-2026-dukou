@@ -1,46 +1,46 @@
 {
   "bands_db_rel_1k": {
-    "31": -7.1,
-    "63": -1.6,
-    "125": -1.4,
+    "31": -6.1,
+    "63": -2.2,
+    "125": -1.5,
     "250": 1.8,
-    "500": 1.1,
+    "500": 1.0,
     "1000": 0.0,
-    "2000": -2.0,
-    "4000": -4.7,
+    "2000": -2.1,
+    "4000": -4.8,
     "8000": -9.4,
-    "16000": -18.1
+    "16000": -17.9
   },
   "band_error_db": {
-    "31": -0.1,
-    "63": 1.4,
-    "125": -0.9,
+    "31": 0.9,
+    "63": 0.8,
+    "125": -1.0,
     "250": 0.8,
-    "500": -0.4,
+    "500": -0.5,
     "1000": 0.0,
-    "2000": -0.5,
-    "4000": -0.2,
+    "2000": -0.6,
+    "4000": -0.3,
     "8000": -0.4,
-    "16000": -2.1
+    "16000": -1.9
   },
-  "max_abs_band_error_db": 2.13,
+  "max_abs_band_error_db": 1.89,
   "section_lufs": {
-    "I  before light": -19.42,
-    "II  first grey": -12.87,
-    "III  sunrise": -11.1,
-    "IV  far shore": -19.53
+    "I  before light": -19.2,
+    "II  first grey": -12.97,
+    "III  sunrise": -11.04,
+    "IV  far shore": -19.26
   },
   "measures": {
     "duration_s": 252.0,
-    "integrated_lufs": -14.071,
+    "integrated_lufs": -14.053,
     "true_peak_dbtp": -1.2,
     "sample_peak_db": -1.206,
-    "lra_lu": 12.825,
-    "dc_offset": 8.27e-06,
-    "stereo_corr": 0.1195,
-    "mono_fold_excess_db": 2.874,
-    "spectral_centroid_hz": 765.5,
-    "low_ratio_lt120": 0.3508,
-    "onset_density_per_s": 18.885
+    "lra_lu": 12.383,
+    "dc_offset": 4.66e-06,
+    "stereo_corr": 0.165,
+    "mono_fold_excess_db": 2.884,
+    "spectral_centroid_hz": 693.0,
+    "low_ratio_lt120": 0.4168,
+    "onset_density_per_s": 18.81
   }
 }
