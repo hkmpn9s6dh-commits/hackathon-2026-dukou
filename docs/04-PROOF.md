@@ -14,19 +14,29 @@
 ## 2. 全新 clone 的实测
 
 ```
-git clone https://github.com/hkmpn9s6dh-commits/hackathon-2026-dukou.git _clone-dk
-cd _clone-dk
+git clone https://github.com/hkmpn9s6dh-commits/hackathon-2026-dukou.git _clone
+cd _clone
 python -m venv .venv && ./.venv/Scripts/python.exe -m pip install -r requirements.txt
-PYTHONPATH=src ./.venv/Scripts/python.exe scripts/build.py
+PYTHONPATH=src ./.venv/Scripts/python.exe scripts/build.py --variant bell
 PYTHONPATH=src ./.venv/Scripts/python.exe scripts/verify.py --twice
 ```
 
-结果（2026-11-16 11:43 UTC / 12:43 北京）：
+结果（2026-11-16，commit `419a4f9`）：
 
-- 装依赖 + 构建 + 全部断言：**4 分 07 秒**
+- 装依赖 + 从零构建 + 全部断言：**3 分 48 秒**
 - 26 条断言 **0 失败**
-- 两次渲染 sha256 一致：`d6a99c672f50b179…`
-- **与本机产出的 sha256 完全相同** —— 不是"能跑起来"，是"跑出一模一样的东西"
+- 两次渲染 sha256 一致：`a1401b7a5181deaf…`
+- **与工作机产出的 sha256 完全相同** —— 不是"能跑起来"，是"跑出一模一样的东西"
+
+### 这一步抓到的真 bug
+
+第一次在 clone 里跑 `--twice` 时报 **FAIL**：两次的 sha256 不同（`a1401b7a…` vs `d6a99c67…`）。
+查下来不是不确定性——`verify.py` 重建时没传 `--variant`，于是：
+第一遍比的是**丙**（定稿），第二遍重建出的是**乙**（默认值）。
+
+**同一个坑两天内会以两种面目出现**：这个 bug 只在"定稿 ≠ 默认值"时才出现，
+工作机上因为定稿就是默认值，一直是绿的。修法：`build.json` 记下 `variant`，
+`verify.py` 重建时照着传。判据从"两次哈希一致"变成"两次同读法的哈希一致"。
 
 ## 3. 客观审计的数字
 
