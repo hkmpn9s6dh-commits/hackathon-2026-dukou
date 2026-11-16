@@ -1,0 +1,7 @@
+.venv/
+out/*.wav
+out/*.mp3
+out/mp3check.wav
+__pycache__/
+*.pyc
+.pytest_cache/

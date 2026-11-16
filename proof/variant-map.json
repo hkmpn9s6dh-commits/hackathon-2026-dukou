@@ -1,0 +1,26 @@
+{
+  "甲": {
+    "internal": "water",
+    "lufs": -14.03,
+    "lra": 12.18,
+    "tp": -1.2,
+    "corr": 0.015,
+    "mono_excess": 3.01
+  },
+  "乙": {
+    "internal": "boat",
+    "lufs": -14.05,
+    "lra": 12.38,
+    "tp": -1.2,
+    "corr": 0.165,
+    "mono_excess": 2.88
+  },
+  "丙": {
+    "internal": "bell",
+    "lufs": -14.07,
+    "lra": 12.82,
+    "tp": -1.2,
+    "corr": 0.12,
+    "mono_excess": 2.87
+  }
+}

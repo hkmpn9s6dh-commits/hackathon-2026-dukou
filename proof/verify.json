@@ -1,0 +1,132 @@
+[
+  {
+    "check": "out/muxi.wav 存在",
+    "pass": true,
+    "detail": "72.6 MB"
+  },
+  {
+    "check": "out/muxi.mp3 存在",
+    "pass": true,
+    "detail": "10.08 MB"
+  },
+  {
+    "check": "24-bit WAV 能读回",
+    "pass": true,
+    "detail": "shape=(12096000, 2)"
+  },
+  {
+    "check": "帧数 = 252.0 s × 48 kHz",
+    "pass": true,
+    "detail": "12096000 vs 12096000"
+  },
+  {
+    "check": "分母写的是 2^23（没有把 -0.5 读成 +1.5）",
+    "pass": true,
+    "detail": "peak=0.8704"
+  },
+  {
+    "check": "没有样本越过满刻度",
+    "pass": true,
+    "detail": "-1.21 dBFS"
+  },
+  {
+    "check": "集成响度 −14.0 ± 0.5 LUFS",
+    "pass": true,
+    "detail": "-14.05"
+  },
+  {
+    "check": "真峰值 ≤ −1.0 dBTP",
+    "pass": true,
+    "detail": "-1.20"
+  },
+  {
+    "check": "LRA 在 6–16 LU（没把动态压死）",
+    "pass": true,
+    "detail": "12.38"
+  },
+  {
+    "check": "直流偏置 < 1e-3",
+    "pass": true,
+    "detail": "4.66e-06"
+  },
+  {
+    "check": "单声道折叠额外损失 < 3 dB",
+    "pass": true,
+    "detail": "2.88"
+  },
+  {
+    "check": "立体声相关 0.05–0.85（不是假立体也不是单声道）",
+    "pass": true,
+    "detail": "0.165"
+  },
+  {
+    "check": "八度带最大偏差 ≤ 4 dB",
+    "pass": true,
+    "detail": "worst 16000Hz -1.9dB"
+  },
+  {
+    "check": "第三段是全曲最响",
+    "pass": true,
+    "detail": "['-19.2', '-13.0', '-11.0', '-19.3']"
+  },
+  {
+    "check": "第二段比第一段响（有推进）",
+    "pass": true,
+    "detail": "-13.0 vs -19.2"
+  },
+  {
+    "check": "第四段退回去（比第二段轻 4 dB 以上）",
+    "pass": true,
+    "detail": "-19.3 vs -13.0"
+  },
+  {
+    "check": "结尾 5 秒在衰减",
+    "pass": true,
+    "detail": "末 5 s -32.3 LUFS"
+  },
+  {
+    "check": "来源账只指向一处",
+    "pass": true,
+    "detail": "['steel_impulse@seed20261201']"
+  },
+  {
+    "check": "声部调用数 > 40（说明确实是一个一个派生的）",
+    "pass": true,
+    "detail": "209"
+  },
+  {
+    "check": "带 ID3v2 标签",
+    "pass": true,
+    "detail": "ID3"
+  },
+  {
+    "check": "码率 ≥ 192 kbps（320 CBR）",
+    "pass": true,
+    "detail": "320 kbps"
+  },
+  {
+    "check": "MP3 解码后响度与 WAV 差 ≤ 0.5 LU",
+    "pass": true,
+    "detail": "-14.05 vs -14.05"
+  },
+  {
+    "check": "MP3 解码后真峰值 ≤ −0.8 dBTP",
+    "pass": true,
+    "detail": "-1.07"
+  },
+  {
+    "check": "自建响度表 vs ffmpeg ebur128 差 ≤ 0.2 LU",
+    "pass": true,
+    "detail": "ffmpeg -14.1 vs 自建 -14.1"
+  },
+  {
+    "check": "真峰值口径差 ≤ 0.5 dB",
+    "pass": true,
+    "detail": "ffmpeg -1.2 vs 自建 -1.2"
+  },
+  {
+    "check": "两次渲染 sha256 一致",
+    "pass": true,
+    "detail": "d6a99c672f50b179… vs d6a99c672f50b179…"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "measures": {
+    "duration_s": 252.0,
+    "integrated_lufs": -14.053,
+    "true_peak_dbtp": -1.2,
+    "sample_peak_db": -1.206,
+    "lra_lu": 12.383,
+    "dc_offset": 4.66e-06,
+    "stereo_corr": 0.165,
+    "mono_fold_excess_db": 2.884,
+    "spectral_centroid_hz": 693.0,
+    "low_ratio_lt120": 0.4168,
+    "onset_density_per_s": 18.81
+  },
+  "provenance": {
+    "calls": 209,
+    "sources": [
+      "steel_impulse@seed20261201"
+    ]
+  },
+  "seconds": 87.2
+}
