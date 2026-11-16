@@ -1,16 +1,16 @@
 {
   "measures": {
     "duration_s": 252.0,
-    "integrated_lufs": -14.053,
+    "integrated_lufs": -14.071,
     "true_peak_dbtp": -1.2,
     "sample_peak_db": -1.206,
-    "lra_lu": 12.383,
-    "dc_offset": 4.66e-06,
-    "stereo_corr": 0.165,
-    "mono_fold_excess_db": 2.884,
-    "spectral_centroid_hz": 693.0,
-    "low_ratio_lt120": 0.4168,
-    "onset_density_per_s": 18.81
+    "lra_lu": 12.825,
+    "dc_offset": 8.27e-06,
+    "stereo_corr": 0.1195,
+    "mono_fold_excess_db": 2.874,
+    "spectral_centroid_hz": 765.5,
+    "low_ratio_lt120": 0.3508,
+    "onset_density_per_s": 18.885
   },
   "provenance": {
     "calls": 209,
@@ -18,5 +18,5 @@
       "steel_impulse@seed20261201"
     ]
   },
-  "seconds": 87.2
+  "seconds": 88.1
 }

@@ -93,13 +93,16 @@ def measure(x: np.ndarray) -> dict:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--wav-only", action="store_true")
+    ap.add_argument("--variant", default="boat",
+                    choices=["boat", "water", "bell"],
+                    help="三个读法之一；闸 D 盲排选出的是 bell（丙）")
     ap.add_argument("--target-lufs", type=float, default=-14.0)
     a = ap.parse_args()
 
     OUT.mkdir(exist_ok=True)
     t0 = time.time()
     print(f"render … 目标 {score.TOTAL_S:.1f} s / {dsp.FS} Hz")
-    st = R.render()
+    st = R.render(variant=a.variant)
     print(f"  render 用时 {time.time() - t0:.1f} s，未母带 LUFS={dsp.integrated_lufs(st):.2f}")
     # 留 0.2 dB 余量：MP3 编解码会让真峰值略微上冲
     st = R.master(st, target_lufs=a.target_lufs, ceiling_db=-1.2)

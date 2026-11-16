@@ -8,7 +8,15 @@
 
 ```
 python scripts/build.py     # 从零重建 out/muxi.wav + out/muxi.mp3（约 90 秒）
-bash  scripts/verify.sh     # 25 条可判定断言（闸 C）
+bash  scripts/verify.sh     # 38 条单元断言 + 26 条交付物断言（闸 C）
+```
+
+定稿是三个读法里的 **丙（钟）**，由闸 D 盲排选出（`docs/06-GATE-D.md`）。
+另外两个读法还能一行命令渲出来：
+
+```
+python scripts/build.py --variant boat    # 乙：全编制（原定稿）
+python scripts/build.py --variant water   # 甲：只有水/弦垫/箫/钟
 ```
 
 ## 目录
@@ -23,9 +31,10 @@ bash  scripts/verify.sh     # 25 条可判定断言（闸 C）
 | `src/ns/analysis.py` | 八度带平衡与动态分析 |
 | `src/ns/plot.py` | 聆听表（盲排用的那三张图） |
 | `src/ns/wavio.py` | 24-bit WAV 读写（不用标准库 wave：它读 24-bit 会少读） |
-| `docs/` | SPEC、尺子、制作记录、验收、交件 |
+| `docs/` | SPEC、尺子、制作记录、验收、证据、闸 D、交件 |
 | `tests/` | 38 条单元断言 |
-| `scripts/verify.py` | 25 条交付物断言 |
+| `scripts/verify.py` | 26 条交付物断言 |
+| `scripts/motif_check.py` | 动机在混音里突不突出（评委点出的盲区） |
 
 ## 依赖
 
